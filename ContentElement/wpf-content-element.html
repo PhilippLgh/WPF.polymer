@@ -1,0 +1,12 @@
+	<polymer-element name="WPF-ContentElement" extends="WPF-DependencyObject">
+	  <template>
+	    <span>Hello from <b>wpf-content-element</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-ContentElement',{
+	  		ready: function(){
+	  			console.log('custom element: content element is ready: ',this.Height, this.Width);
+	  		}
+	  	});
+	  </script>
+	</polymer-element>

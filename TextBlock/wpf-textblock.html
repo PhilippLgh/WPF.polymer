@@ -1,0 +1,19 @@
+	<polymer-element name="WPF-TextBlock" extends="WPF-FrameworkElement" attributes="Foreground">
+	  <template>
+	  	<style>
+			/*overwrite style here*/
+			:host{
+				color: {{Foreground}};
+
+			}
+	    </style>
+	    <span><content class="bla"></content></span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-TextBlock',{
+	  		ready: function(){
+	  			console.log('custom element wpf-textblock is ready: ',this.Height, this.Width);
+	  		}
+	  	});
+	  </script>
+	</polymer-element>

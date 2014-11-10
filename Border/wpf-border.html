@@ -1,0 +1,12 @@
+	<polymer-element name="WPF-Border" extends="WPF-Decorator" >
+	  <template>
+	    <span>Hello from <b>wpf-border</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-Border',{
+	  		ready: function(){
+	  			console.log('custom element border is ready: ',this.Height, this.Width);
+	  		},
+	  	});
+	  </script>
+	</polymer-element>

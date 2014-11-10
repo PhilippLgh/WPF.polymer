@@ -1,0 +1,25 @@
+	<polymer-element name="WPF-Button" extends="WPF-ButtonBase">
+	  <template>
+	  	<button onClick="{{_OnClick}}">{{Content}}</button>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-Button',{
+	  		ready: function(){
+	  			console.log('custom element wpf-button is ready: ',this.Height, this.Width, this.Click);
+	  		},
+	  		//Gets or sets a brush that describes the background of a control.
+	  		Background: null,
+	  		get _OnClick(){
+	  			var self = this;
+	  			ClickAdapter[this.Click] = function(){
+	  				console.log("hello my name is "+self.Click);
+	  				var _Scope = window.Wpf_MediaPlayer.MainWindow;
+	  				console.log("before click",_Scope, _Scope["OnMouseDownPlayMedia"]);
+	  				_Scope.OnMouseDownPlayMedia();
+	  				//(_Scope['OnMouseDownPlayMedia'])();
+	  			}
+	  			return "ClickAdapter."+this.Click+"()";
+	  		}
+	  	});
+	  </script>
+	</polymer-element>

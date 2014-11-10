@@ -1,0 +1,18 @@
+	<polymer-element name="WPF-MediaElement" extends="WPF-FrameworkElement" attributes="Source">
+	  <template>
+	  	<link rel="stylesheet" href="../CSS-Global/wpf-framework-element.css">
+	    <video id="video" width="{{_Width}}" height="{{_Height}}"></video>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-MediaElement',{
+	  		ready: function(){
+	  			console.log('custom element wpf-media-element is ready: ',this.Height, this.Width, this.Source);
+	  			var video = this.video = this.$.video;
+	  			this.video.src = this.Source;
+	  		},
+	  		Play: function(){
+	  			this.video.play();
+	  		}
+	  	});
+	  </script>
+	</polymer-element>

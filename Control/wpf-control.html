@@ -1,0 +1,17 @@
+	<polymer-element name="WPF-Control" extends="WPF-FrameworkElement" attributes="Background">
+	  <template>
+	  	<style>
+	  		::content > * {background-color: {{Background}}  }
+	  	</style>
+	    <span>Hello from <b>wpf-control</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-Control',{
+	  		ready: function(){
+	  			console.log('custom element wpf-control is ready: ',this.Height, this.Width, this.Background);
+	  		},
+	  		//Gets or sets a brush that describes the background of a control.
+	  		Background: ""
+	  	});
+	  </script>
+	</polymer-element>

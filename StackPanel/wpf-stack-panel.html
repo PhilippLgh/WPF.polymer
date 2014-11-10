@@ -1,0 +1,20 @@
+	<polymer-element name="WPF-StackPanel" extends="WPF-Panel">
+	  <template>
+	  	<link rel="stylesheet" href="../CSS-Global/wpf-framework-element.css">
+	    <content></content>
+	   	<style>
+	   		:host {
+	   			width: 100%; /*FIXME*/
+	   		}
+	  	</style>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-StackPanel',{
+	  		ready: function(){
+	  			console.log('custom element WPF-StackPanel is ready: ',this.Height, this.Width, this.Background);
+
+	  			this.super();
+	  		}
+	  	});
+	  </script>
+	</polymer-element>

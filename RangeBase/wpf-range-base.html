@@ -1,0 +1,14 @@
+	<polymer-element name="WPF-RangeBase" extends="WPF-Control" attributes="Maximum Minimum">
+	  <template>
+	    <span>Hello from <b>WPF-RangeBase</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-RangeBase',{
+	  		ready: function(){
+	  			console.log('custom element wpf-range-base is ready: ',this.Height, this.Width);
+	  		},
+	  		Maximum: 0,
+	  		Minimum: 0,
+	  	});
+	  </script>
+	</polymer-element>

@@ -1,0 +1,15 @@
+	<polymer-element name="WPF-Slider" extends="WPF-RangeBase">
+	  <template>
+	  	<style>
+			/*overwrite style here*/
+	    </style>
+	    <input type="range"  min="{{Minimum}}" max="{{Maximum}}" value={{Value}}/>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-Slider',{
+	  		ready: function(){
+	  			console.log('custom element wpf-slider is ready: ',this.Height, this.Width, this.Background);
+	  		},
+	  	});
+	  </script>
+	</polymer-element>

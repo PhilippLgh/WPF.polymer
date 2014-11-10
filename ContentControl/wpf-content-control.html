@@ -1,0 +1,13 @@
+	<polymer-element name="WPF-ContentControl" extends="WPF-Control" Attributes="Content">
+	  <template>
+	    <span>Hello from <b>wpf-content-control</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-ContentControl',{
+	  		ready: function(){
+	  			console.log('custom element wpf-content-control is ready: ',this.Height, this.Width);
+	  		},
+	  		Content: null
+	  	});
+	  </script>
+	</polymer-element>

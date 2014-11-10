@@ -1,0 +1,16 @@
+	<polymer-element name="WPF-ButtonBase" extends="WPF-ContentControl" Attributes="Click">
+	  <template>
+	    <span>Hello from <b>wpf-ButtonBase</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-ButtonBase',{
+	  		ready: function(){
+	  			console.log('custom element wpf-ButtonBase is ready: ',this.Height, this.Width);
+	  		},
+	  		//Gets or sets a brush that describes the background of a control.
+	  		Background: null,
+	  		Click: null
+
+	  	});
+	  </script>
+	</polymer-element>

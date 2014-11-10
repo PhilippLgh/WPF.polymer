@@ -1,0 +1,14 @@
+	<polymer-element name="WPF-RowDefinition" extends="WPF-DefinitionBase" attributes="Height">
+	  <script>  	
+	  	Polymer('WPF-RowDefinition',{
+	  		ready: function(){
+	  			console.log('custom element: row definition is ready: ', this.Height);
+	  		},
+	  		/*Gets the calculated height of a RowDefinition element, or sets the GridLength value of a row that is defined by the RowDefinition.*/
+	  		Height: "",
+
+	  		/*GridLength Structure: Represents the length of elements that explicitly support Star unit types.*/
+	  		GridLength: ""
+	  	});
+	  </script>
+	</polymer-element>

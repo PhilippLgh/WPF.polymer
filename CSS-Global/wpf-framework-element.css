@@ -1,0 +1,7 @@
+	:host {
+		display: block;
+	    width: {{_Width}};
+	    height: {{_Height}};
+	    background: {{Background}};
+	    overflow: hidden;
+	}

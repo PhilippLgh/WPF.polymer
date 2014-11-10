@@ -1,0 +1,39 @@
+	  var properties = {
+	  		/*Gets the rendered height of this element.*/
+	  		ActualHeight: 0,
+	  		/*Gets the rendered width of this element.*/
+	  		ActualWidth: 0,
+	  		/*Gets or sets the data context for an element when it participates in data binding.*/
+	  		DataContext: null,
+	  		/*Gets or sets the context menu element that should appear whenever the context menu is requested through user interface (UI) from within this element.*/
+	  		ContextMenu: null,
+	  		/*Gets or sets the cursor that displays when the mouse pointer is over this element.*/
+	  		Cursor: null,
+	  		/*Gets or sets the suggested height of the element.*/
+	  		Height:0,
+	  		/*Gets or sets the horizontal alignment characteristics applied to this element when it is composed within a parent element, such as a panel or items control.*/
+	  		HorizontalAlignment:null,
+	  		/*Gets a value that indicates whether this element has been initialized, either during processing by a XAML processor, or by explicitly having its EndInit method called.*/
+	  		IsInitialized: false,
+	  		/*Gets a value that indicates whether this element has been loaded for presentation.*/
+	  		IsLoaded: false,
+	  		/*Gets or sets localization/globalization language information that applies to an element.*/
+	  		Language: "en",
+	  		/*Gets or sets the outer margin of an element.*/
+	  		Margin: null,
+	  		MaxHeight:0,
+	  		MaxWidth:0,
+	  		MinHeight:0,
+	  		MinWidth:0,
+	  		Name: "",
+	  		Parent: null,
+	  		Resources: null,
+	  		//Style: null,
+	  		Tag: null,
+	  		TemplatedParent: null,
+	  		Triggers: null,
+	  		UseLayoutRounding: null,
+	  		VerticalAlignment: null,
+	  		Width: 0
+
+	  	};

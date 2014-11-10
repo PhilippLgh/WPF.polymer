@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Components - Test A</title>
+	<script>
+		var wpf = {};
+
+		/*
+		Alternative A
+		
+		wpf.button = Object.create(HTMLElement.prototype);
+
+
+		wpf.button.bla = function(){
+			alert("bla called");
+		}
+
+		Object.defineProperty(wpf.button, "content", {value:""});
+		Object.defineProperty(wpf.button, "bar", {value:5});
+
+		document.registerElement('wpf-button',{prototype: wpf.button});
+		*/
+
+		//Alternative B
+		var spec =  Object.create(HTMLButtonElement.prototype, {
+			bar : {
+				get: function() {return 5;}
+			},
+			bla: {
+				value: function() {
+					alert("bla called");
+				}
+			}
+
+		});
+		Object.defineProperty(spec, 'content', { 
+    		value: 20,
+    		writable : true
+		});
+		spec.createdCallback = function(){
+				console.log("created callback is called",this);
+				this.innerHTML= this.getAttribute('content');
+		} 
+		wpf.button = document.registerElement('wpf-button', {
+			prototype:spec,
+			extends: 'button'
+		})
+		console.log("script executed");
+	</script>
+</head>
+<body>
+	<button is="wpf-button" content="hallo welt"></button>
+	<button>moin</button>
+</body>
+</html>

@@ -1,0 +1,60 @@
+	<link rel="import" href="./Polymer_App/bower_components/polymer/polymer.html">
+
+	<script>
+		/*global helper*/
+		function IsNumber(n) {
+		  return !isNaN(parseFloat(n)) && isFinite(n);
+		}	
+
+	  	var ClickAdapter = {};
+
+		function InitializeComponent(){};
+
+		function DispatcherTimer(){
+			this.Start = function(){console.log("DispatcherTimer.Start");};
+		}
+
+		function TimeSpan(){};
+		TimeSpan.FromSeconds = function(){
+			console.log("timespan from seconds");
+		};
+
+
+		var Console = {
+			WriteLine: function(){
+				console.log(args);
+			}
+
+		}
+	</script>
+	
+	<link rel="import" href="./DependencyObject/wpf-dependency-object.html">
+		<link rel="import" href="./Visual/wpf-visual.html">
+			<link rel="import" href="./UI_Element/wpf-uielement.html">
+				<link rel="import" href="./FrameworkElement/wpf-framework-element.html">
+					<link rel="import" href="./TextBlock/wpf-textblock.html">
+					<link rel="import" href="./Decorator/wpf-decorator.html">
+						<link rel="import" href="./Border/wpf-border.html">
+					
+					<link rel="import" href="./MediaElement/wpf-media-element.html">
+
+					<link rel="import" href="./Panel/wpf-panel.html">
+						<link rel="import" href="./Grid/wpf-grid.html">
+						<link rel="import" href="./StackPanel/wpf-stack-panel.html">
+
+					<link rel="import" href="./Control/wpf-control.html">
+						<link rel="import" href="./ContentControl/wpf-content-control.html">
+							<link rel="import" href="./Window/wpf-window.html">
+
+							<link rel="import" href="./ButtonBase/wpf-button-base.html">
+								<link rel="import" href="./Button/wpf-button.html">
+
+							<link rel="import" href="./Label/wpf-label.html">
+
+						<link rel="import" href="./RangeBase/wpf-range-base.html">
+							<link rel="import" href="./Slider/wpf-slider.html">
+
+		<link rel="import" href="./ContentElement/wpf-content-element.html">
+			<link rel="import" href="./FrameworkContentElement/wpf-framework-content-element.html">
+				<link rel="import" href="./DefinitionBase/wpf-definition-base.html">
+					<link rel="import" href="./RowDefinition/wpf-row-definition.html">

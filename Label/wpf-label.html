@@ -1,0 +1,13 @@
+	<polymer-element name="WPF-Label" extends="WPF-ContentControl">
+	  <template>
+	    <span>Hello from <b>wpf-label</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-Label',{
+	  		ready: function(){
+	  			console.log('custom element wpf-label is ready: ',this.Height, this.Width);
+	  		},
+	  		Content: null
+	  	});
+	  </script>
+	</polymer-element>

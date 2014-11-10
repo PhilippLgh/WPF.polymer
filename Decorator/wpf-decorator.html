@@ -1,0 +1,12 @@
+	<polymer-element name="WPF-Decorator" extends="WPF-FrameworkElement" >
+	  <template>
+	    <span>Hello from <b>wpf-decorator</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-Decorator',{
+	  		ready: function(){
+	  			console.log('custom element decorator is ready: ',this.Height, this.Width);
+	  		},
+	  	});
+	  </script>
+	</polymer-element>

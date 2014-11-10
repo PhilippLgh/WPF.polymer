@@ -1,0 +1,28 @@
+	<polymer-element name="WPF-Window" extends="WPF-ContentControl">
+	  <template>
+	  	<link rel="stylesheet" href="../CSS-Global/wpf-framework-element.css">
+	  	<style>
+			/*overwrite style here*/
+	    </style>
+	    <content></content>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-Window',{
+	  		ready: function(){
+	  			console.log('custom element wpf-window is ready: ',this.Height, this.Width);
+	  			window.resizeTo(this.Width, this.Height);
+
+	  		},
+	  		domReady:function(){
+				//https://www.polymer-project.org/resources/faq.html#zerochildren
+
+	  			//var myWindow = window.open("", "", "width={{Width}}, height={{Height}}");  // Opens a new window
+	  			//myWindow.document.write("<p>I replaced the current window.</p>");
+	  			console.log("window content: ",this.$.content);
+	  			//myWindow.document.write(this.$.content.innerHTML);
+
+	  		},
+	  		Content: null
+	  	});
+	  </script>
+	</polymer-element>

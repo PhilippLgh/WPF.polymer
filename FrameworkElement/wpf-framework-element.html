@@ -1,0 +1,20 @@
+	<polymer-element name="WPF-FrameworkElement" extends="WPF-UIElement" attributes="Height Width">
+	  <template>
+	    <span>Hello from <b>wpf-framework-element</b>. This is my Shadow DOM.</span>
+	  </template>
+	  <script>  	
+	  	Polymer('WPF-FrameworkElement',{
+	  		ready: function(){
+	  			console.log('custom element framework-elment is ready: ',this.Height, this.Width);
+	  		},
+	  		Height: "auto",
+	  		get _Height(){
+	  			return this.Height == "auto" ? "100%" : ( IsNumber(this.Height) ? this.Height+"px" : 0 );
+	  		},
+	  		Width: "auto",
+	  		get _Width(){
+	  			return this.Width == "auto" ? "100%" : ( IsNumber(this.Width) ? this.Width+"px" : 0 );
+	  		}
+	  	});
+	  </script>
+	</polymer-element>

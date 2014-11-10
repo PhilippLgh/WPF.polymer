@@ -1,0 +1,95 @@
+	<polymer-element name="WPF-Grid" extends="WPF-Panel" >
+	 <template>
+	  	<link rel="stylesheet" href="../CSS-Global/wpf-framework-element.css">
+	  	<style>
+			/*overwrite style here*/
+	    </style>
+		    <shadow>
+				<!-- FIXME / TODO
+				https://www.polymer-project.org/docs/polymer/template.html
+				https://github.com/Polymer/TemplateBinding/blob/master/examples/how_to/nested_templates.html
+		    	<template repeat="{{RowDefinitionCollection}}">
+  					<span>moinsen</span>
+	  			</template>
+	  			-->
+		    	<content id="content"></content>
+		    </shadow>
+	  </template>
+
+	  <script>
+	  	Polymer('WPF-Grid',{
+	  		ready: function(){
+	  			this.super();
+
+	  			console.log('custom element WPF-Grid is ready ',this.Width, this.Height, this.Background);
+	  		},
+	  		RowDefinitionCollection: {},
+	  		domReady:function(){
+				//we have to read the properties of the children
+				this.children.array().forEach(function(child){
+
+					if(child.nodeName == "WPF-Grid.RowDefinitions".toUpperCase()){
+						
+						//iterate over all row defs
+						child.children.array().forEach(function(row,i){
+							this.RowDefinitionCollection[i] = row;
+						}.bind(this));
+
+						//after initialization clean DOM
+						this.removeChild(child);
+
+					}
+
+				}.bind(this));
+
+				
+				this.CreateGrid();
+
+	  		},
+	  		CreateGrid:function(){
+	  			var collection_height = 0;
+	  			var rowNumber = 0;
+	  			var row, row_idx;
+	  			for(row_idx in this.RowDefinitionCollection){
+	  				rowNumber++;
+	  				row = this.RowDefinitionCollection[row_idx];
+	  				var height = row.Height;
+	  				if(height.indexOf('*') > -1){
+	  					height = height.slice(0,height.length-1);
+	  				}
+	  				collection_height += parseInt(height);
+	  			}
+	  			for(row_idx in this.RowDefinitionCollection){
+	  				row = this.RowDefinitionCollection[row_idx];
+	  				//TODO prüfe ob fragment geht
+	  				//var range = document.createRange();
+	  				//var docFragment = range.createContextualFragment( '<div style="border: 1px solid red; height:20px;"></div>' );
+	  				var el = document.createElement("div");
+	  				//should not be plain number:
+	  				//http://stackoverflow.com/questions/20306204/using-queryselector-with-ids-that-are-numbers
+	  				el.id = "row"+row_idx;
+	  				el.classList.add('row-wrapper');
+
+	  				var height_pct = parseInt(row.Height)/collection_height*100;
+	  				el.style.cssText  = "height: "+height_pct+"%";
+	  				//console.log("height in %", height_pct);
+
+
+	  				this.appendChild(el);
+
+	  			}
+	  			this.children.array().forEach(function(child){
+	  				if(!child.classList.contains('row-wrapper')){
+	  					var targetRowIdx = child;
+	  					var idx = 0;//default: putt  all children in row 0
+	  					if(child.hasAttribute("Grid.Row")){
+	  						var idx = child.getAttribute("Grid.Row");
+	  					}
+	  					var el = this.querySelector('#row'+idx);
+	  					el.appendChild(child);
+	  				}
+	  			}.bind(this));
+	  		}
+	  	});
+	  </script>
+	</polymer-element>
